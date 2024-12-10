@@ -44,3 +44,55 @@
 
 - Passwords must be stored securely using hashing.
 - Authentication should be enforced using tokens (e.g., JWT).
+
+
+# REST API Endpoints
+
+### User Authentication
+
+- POST /api/register
+- Registers a new user.
+
+- POST /api/login
+- Authenticates a user and returns a token.
+
+### User Management
+
+- GET /api/users/{id}
+- Fetch user details.
+
+- PUT /api/users/{id}
+- Update user profile.
+- 
+### Property Management
+
+- GET /api/properties
+- List all properties with filters (e.g., price, location).
+- Query Params: price_min, price_max, location, availability.
+
+- POST /api/properties
+- Create a new property (for landlords).
+- Auth Required: Yes
+
+- PUT /api/properties/{id}
+- Update a property by ID (only by owner).
+- Auth Required: Yes
+
+- DELETE /api/properties/{id}
+- Delete a property by ID (only by owner).
+- Auth Required: Yes
+
+### Booking Management
+
+- POST /api/bookings
+- Create a booking for a property.
+
+- GET /api/bookings
+- List all bookings for a user.
+
+- PUT /api/bookings/{id}/status
+- Update booking status (approve/reject).
+
+### Admin
+- GET /api/admin/reports
+- Get reports on users, properties, and bookings.
